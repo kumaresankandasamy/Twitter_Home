@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>	</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	
+
+var promise1="https://fsd1.herokuapp.com/users/1/details";
+var promise2="https://fsd1.herokuapp.com/users/1/followers/suggestions";
+var promise3="https://fsd1.herokuapp.com/users/1/following/tweets";
+var promise4="https://fsd1.herokuapp.com/users/1/tweets";
+var promise5="https://fsd1.herokuapp.com/users/1/followers";
+
+var urls=[];
+
+urls.push(promise1);
+urls.push(promise2);
+urls.push(promise3);
+urls.push(promise4);
+urls.push(promise5);
+ 
+var fetchApis=urls.map(url=>fetch(url));
+var store={};
+var res;
+
+var consolidatedPromise= Promise.all(fetchApis);
+consolidatedPromise.then(responses=>{
+	console.log(responses);
+})
+
+</script>
+</html>
