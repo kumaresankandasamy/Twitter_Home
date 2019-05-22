@@ -11,12 +11,27 @@ Promise.all(requests)
 
     })
        .catch(error=>console.log(error));
-function PromiseCall(url){
+let promiseCall=((url)=>{
 	return fetch(url)
 	.then(response=>response.json())
 	.catch(error=>console.log(error));
+	
+//async and await function thenable
 
+async function(){
+	let randomobj=await promiseList;
+	console.log(`${randomobj}`);
+
+}();
+const getRandomAsync = async () => {
+    try {
+        return await getRandomPromise();
+    } catch(error) {
+        return error;
+    }
 }
+
+});
 let Tweetdate=((month)=>{
 	let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]; 	
 		return `${monthNames[month]}`;
